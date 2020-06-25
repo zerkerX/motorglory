@@ -1,0 +1,95 @@
+project: mgs4.exe
+
+clean:
+ *del obj\*.obj
+ *del mgs4.*
+ *del *.err
+
+!ifdef debug
+comp_options = -i="D:\WATCOM/h" -wx -e25 -zq -od -d2 -bt=dos -fo=obj\.obj -ml
+link_options = d all sys dos op m op maxe=25 op q op symf
+!else
+comp_options = -i="D:\WATCOM/h" -wx -e25 -zq -or -bt=dos -fo=obj\.obj -ml
+link_options = sys dos op maxe=25 op el
+!endif
+
+!define BLANK ""
+obj\bitmap.obj : src\bitmap.c .AUTODEPEND
+ *wcc src\bitmap.c $(comp_options)
+
+obj\font.obj : src\font.c .AUTODEPEND
+ *wcc src\font.c $(comp_options)
+
+obj\main.obj : src\main.c .AUTODEPEND
+ *wcc src\main.c $(comp_options)
+
+obj\menu.obj : src\menu.c .AUTODEPEND
+ *wcc src\menu.c $(comp_options)
+
+obj\mmain.obj : src\mmain.c .AUTODEPEND
+ *wcc src\mmain.c $(comp_options)
+
+obj\mphoto.obj : src\mphoto.c .AUTODEPEND
+ *wcc src\mphoto.c $(comp_options)
+
+obj\moptions.obj : src\moptions.c .AUTODEPEND
+ *wcc src\moptions.c $(comp_options)
+
+obj\msavload.obj : src\msavload.c .AUTODEPEND
+ *wcc src\msavload.c $(comp_options)
+
+obj\medit.obj : src\medit.c .AUTODEPEND
+ *wcc src\medit.c $(comp_options)
+
+obj\medqueue.obj : src\medqueue.c .AUTODEPEND
+ *wcc src\medqueue.c $(comp_options)
+
+obj\video.obj : src\video.c .AUTODEPEND
+ *wcc src\video.c $(comp_options)
+
+obj\gallery.obj : src\gallery.c .AUTODEPEND
+ *wcc src\gallery.c $(comp_options)
+
+obj\sound.obj : src\sound.c .AUTODEPEND
+ *wcc src\sound.c $(comp_options)
+
+obj\keys.obj : src\keys.c .AUTODEPEND
+ *wcc src\keys.c $(comp_options)
+
+obj\cutscene.obj : src\cutscene.c .AUTODEPEND
+ *wcc src\cutscene.c $(comp_options)
+
+obj\tiles.obj : src\tiles.c .AUTODEPEND
+ *wcc src\tiles.c $(comp_options)
+
+obj\actor.obj : src\actor.c .AUTODEPEND
+ *wcc src\actor.c $(comp_options)
+
+obj\stage.obj : src\stage.c .AUTODEPEND
+ *wcc src\stage.c $(comp_options)
+
+obj\chapter.obj : src\chapter.c .AUTODEPEND
+ *wcc src\chapter.c $(comp_options)
+
+obj\editor.obj : src\editor.c .AUTODEPEND
+ *wcc src\editor.c $(comp_options)
+
+obj\game.obj : src\game.c .AUTODEPEND
+ *wcc src\game.c $(comp_options)
+
+obj\timer.obj : src\timer.c .AUTODEPEND
+ *wcc src\timer.c $(comp_options)
+
+
+mgs4.exe : obj\bitmap.obj obj\font.obj obj\main.obj obj\menu.obj obj\video.obj &
+obj\mmain.obj obj\mphoto.obj obj\gallery.obj obj\sound.obj &
+obj\cutscene.obj obj\tiles.obj obj\actor.obj obj\stage.obj obj\chapter.obj obj\editor.obj &
+obj\game.obj obj\moptions.obj obj\medit.obj obj\keys.obj &
+obj\medqueue.obj obj\timer.obj obj\msavload.obj .AUTODEPEND
+ @%write mgs4.lk1 FIL obj\bitmap.obj,obj\font.obj,obj\main.obj,obj\menu.obj,obj\video.obj,&
+obj\mmain.obj,obj\mphoto.obj,obj\gallery.obj,obj\sound.obj,obj\cutscene.obj,&
+obj\tiles.obj,obj\actor.obj,obj\stage.obj,obj\chapter.obj,obj\editor.obj,obj\game.obj,obj\moptions.obj,&
+obj\medit.obj,obj\keys.obj,obj\medqueue.obj,obj\timer.obj,obj\msavload.obj
+ @%append mgs4.lk1
+ *wlink name mgs4 $(link_options) @mgs4.lk1
+

@@ -1,0 +1,30 @@
+mkdir converted
+./imgconvert.py *.png
+mv 2020-06-11 converted/001
+mv DSC_0039 converted/002
+mv DSC02550 converted/003
+mv DSC02564 converted/004
+mv DSC02849 converted/005
+mv DSC03032 converted/006
+mv DSC03072 converted/007
+mv DSC03248 converted/008
+mv DSC03254 converted/009
+mv DSC03269 converted/010
+mv DSC03417 converted/011
+mv DSC03505 converted/012
+mv DSC03715 converted/013
+mv DSC03852 converted/014
+mv DSC03880 converted/015
+mv DSC03945 converted/016
+mv MGS4Logo converted/logo
+mv font converted/font
+mv tinyfont converted/tinyfont
+mv tech converted/tech
+mv scarab converted/scarab
+mv sprite_m converted/sprite_m
+mv sprite_l converted/sprite_l
+mv tilesbg converted/tilesbg
+mv tilesfg converted/tilesfg
+mv mask_m converted/mask_m
+mv mask_l converted/mask_l
+mv ak77 converted/ak77
