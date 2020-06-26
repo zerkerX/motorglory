@@ -1,8 +1,8 @@
-project: mgs4.exe
+project: mglory.exe
 
 clean:
  *del obj\*.obj
- *del mgs4.*
+ *del mglory.*
  *del *.err
 
 !ifdef debug
@@ -81,15 +81,15 @@ obj\timer.obj : src\timer.c .AUTODEPEND
  *wcc src\timer.c $(comp_options)
 
 
-mgs4.exe : obj\bitmap.obj obj\font.obj obj\main.obj obj\menu.obj obj\video.obj &
+mglory.exe : obj\bitmap.obj obj\font.obj obj\main.obj obj\menu.obj obj\video.obj &
 obj\mmain.obj obj\mphoto.obj obj\gallery.obj obj\sound.obj &
 obj\cutscene.obj obj\tiles.obj obj\actor.obj obj\stage.obj obj\chapter.obj obj\editor.obj &
 obj\game.obj obj\moptions.obj obj\medit.obj obj\keys.obj &
 obj\medqueue.obj obj\timer.obj obj\msavload.obj .AUTODEPEND
- @%write mgs4.lk1 FIL obj\bitmap.obj,obj\font.obj,obj\main.obj,obj\menu.obj,obj\video.obj,&
+ @%write mglory.lk1 FIL obj\bitmap.obj,obj\font.obj,obj\main.obj,obj\menu.obj,obj\video.obj,&
 obj\mmain.obj,obj\mphoto.obj,obj\gallery.obj,obj\sound.obj,obj\cutscene.obj,&
 obj\tiles.obj,obj\actor.obj,obj\stage.obj,obj\chapter.obj,obj\editor.obj,obj\game.obj,obj\moptions.obj,&
 obj\medit.obj,obj\keys.obj,obj\medqueue.obj,obj\timer.obj,obj\msavload.obj
- @%append mgs4.lk1
- *wlink name mgs4 $(link_options) @mgs4.lk1
+ @%append mglory.lk1
+ *wlink name mglory $(link_options) @mglory.lk1
 
