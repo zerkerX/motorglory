@@ -1,0 +1,60 @@
+=== MOTOR GLORY ===
+ version 0.1
+
+Source and Binaries available from:
+
+https://github.com/zerkerX/motorglory
+ 
+Guide Scarab through three exciting screens in CGA glory! Marvel
+at the included level editor! Wonder if that's all there is?
+
+Yeah, right now, that's it.
+
+REQUIREMENTS
+
+IBM-PC or Compatible with CGA graphics
+256 KB of RAM
+~400 KB of free disk space
+
+
+USAGE
+
+Type 'mglory' to launch the game.
+
+
+CONTROLS
+
+ Menus
+
+Arrows : Move cursor
+Enter  : Select item
+Esc    : Previous menu/quit game
+
+ During Gameplay
+
+Arrows : Move Scarab
+Space  : Fire current weapon
+F2     : Save current game
+Esc    : Exit
+
+NOTE: Saved games can currently only be loaded from the main menu.
+
+ During editor use
+
+Arrows          : Move Cursor
+Ins/Del/Z       : Select or place actor
+Home/Page Up/X  : Select or place foreground tile
+End/Page Down/C : Select or place background tile
+/ and *         : Previous or next stage in chapter
++ and -         : Add and remove stages from chapter
+
+F2  : Save chapter with new filename (Save as)
+F3  : Load chapter
+F6  : Save chapter with current filename
+F10 : Edit stage info (e.g. placement of stages relative to each other)
+F12 : Playtest current stage
+
+NOTE: Editor stages must be saved before they can be tested.
+
+Control reminders are also available during play/editor use.
+

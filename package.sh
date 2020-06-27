@@ -1,0 +1,5 @@
+#!/bin/sh
+rm MGLORY.ZIP
+zip -r MGLORY.ZIP MGLORY.EXE MGLORY.TXT DATA LEVELS
+# Just a blank saves dir
+zip MGLORY.ZIP MGLORY.EXE SAVES
