@@ -26,17 +26,41 @@ along with Motor Glory.  If not, see <https://www.gnu.org/licenses/>.
 static const char * intro_crawl[] =
 {
     /*2345678901234567890123456789012345678*/
-    "What am I doing here?\r\n",
-    
-    "Another war, another battlefield.\r\n"
-    "I don't understand why I keep taking\r\n"
-    "these missions.",
-    
-    "Retirement is looking really good \r\n"
-    "right now.",
+    "I am Scarab, the best infiltration \r\n"
+    "mercenary in the biz.\r\n"
+    "\r\n"
+    "Not that my bank account reflects this\r\n"
+    "status. This particular fact is why I\r\n"
+    "find myself in the middle of a\r\n"
+    "revolution instead of lounging on a\r\n"
+    "beach like any succesful mercenary\r\n"
+    "should be.\r\n",
 
+    /*2345678901234567890123456789012345678*/
+    "Normally I want nothing to do with\r\n"
+    "revolutions. They are usually messy,\r\n"
+    "violent affairs that don't benefit\r\n"
+    "from my particular skill set. In this\r\n"
+    "particular case, however, the\r\n"
+    "Government forces have a particularly\r\n" 
+    "intersting ace up their sleeves.\r\n"
+    "It is known only as...\r\n",
+
+    "'Motor Glory'.",
+
+    /*2345678901234567890123456789012345678*/
+    "Nobody knows exactly what it is; only\r\n"
+    "that it will change warfare as we know\r\n"
+    "it. I have been contracted to find out\r\n"
+    "what it is and steal any plans or\r\n"
+    "information I can get my hand on.\r\n",
+
+    "Then destroy it, of course.\r\n"
+    "\r\n"
+    "Piece of cake, right?\r\n",
     ""
 };
+
 
 enum cast
 {
@@ -52,20 +76,24 @@ struct conv_line {
     const char * message;
 };
 
-static struct conv_line graveyard_conv[] = {
-    {CAST_SCARAB,  "Great. Mechs."},
-    {CAST_TECH, "I love mechs."},
-    {CAST_TECH, "You should really be more \r\n"
-                  "accepting."},
-    {CAST_SCARAB,  "Come out here and say \r\n"
+static struct conv_line stage1_conv[] = {
+    {CAST_TECH,   "Scarab, I forgot to tell you:\r\n"
+                  "The enemy has deployed \r\n"
+                  "mechanized units.\r\n"},
+                  /*****************************/
+    {CAST_SCARAB, "Yes. We've met."},
+    {CAST_TECH,   "Aren't they something?"},
+    {CAST_SCARAB, "Come out here and say \r\n"
                   "hello then."},
                   /*****************************/
-    {CAST_TECH, "I'm quite cozy in my lab,\r\n"
-                  "thanks. This hot chocolate \r\n"
-                  "is delicious."},
-    {CAST_SCARAB,  "You don't have to rub it in."},
-    {CAST_SCARAB,  "I expect some on my next \r\n"
+    {CAST_TECH,   "I'm quite cozy in my lab,\r\n"
+                  "thanks."},
+    {CAST_TECH,   "This hot chocolate is quite\r\n"
+                  "delicious, by the way."},
+    {CAST_SCARAB, "..."},
+    {CAST_SCARAB, "I expect some on my next \r\n"
                   "supply drop."},
+    {CAST_SCARAB, "Scarab out."},
                   /*****************************/
     {CAST_END, ""}
 };
@@ -153,7 +181,7 @@ void scene_intro_conv()
     scene_text("Incoming Call...", 88, 92, 20, SND_SILENCE);
     
     video_clear();
-    intro_conversation(graveyard_conv);
+    intro_conversation(stage1_conv);
 
     bitmap_unload(&faces[CAST_SCARAB]);
     bitmap_unload(&faces[CAST_TECH]);
@@ -174,7 +202,3 @@ int scene_text(const char * text, uint16_t x, uint16_t y,
     return key;
 }
 
-
-/*
-
-*/
