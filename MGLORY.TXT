@@ -58,3 +58,10 @@ NOTE: Editor stages must be saved before they can be tested.
 
 Control reminders are also available during play/editor use.
 
+
+CREDITS
+
+Game by Ryan Armstrong
+
+Special thanks to Geoffrey Card for the original inspiration and photos 
+used for Scarab's likeness.
